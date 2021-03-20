@@ -1,0 +1,57 @@
+en:
+  introduction: 'Welcome to Codebreaker game!'
+  bye: 'Good luck :) Come back again!'
+  commands_description: "Choose one option:\n
+    'start' - start game\n
+    'rules' - get rules\n
+    'stats' - get users' statistics\n
+    'exit' - leave game"
+  unexpected_command: 'You have passed unexpected command. Please choose one from listed commands.'
+  rules: "==========CODEBREAKER RULES==========\n
+          * Codebreaker is a logic game in which a code-breaker tries to break a secret code\n
+          created by a code-maker. The codemaker, which will be played by the application we’re\n
+          going to write, creates a secret code of four numbers between 1 and 6.\n
+          * The codebreaker gets some number of chances to break the code (depends on chosen\n
+          difficulty). In each turn, the codebreaker makes a guess of 4 numbers. The codemaker\n
+          then marks the guess with up to 4 signs - + or - or empty spaces.\n
+          * A + indicates an exact match: one of the numbers in the guess is the same as one of the\n
+          numbers in the secret code and in the same position. For example:\n
+          Secret number - 1234\n
+          Input number - 6264\n
+          Number of pluses - 2 (second and fourth position)\n
+          * A - indicates a number match: one of the numbers in the guess is the same as one of the\n
+          numbers in the secret code but in a different position. For example:\n
+          Secret number - 1234\n
+          Input number - 6462\n
+          Number of minuses - 2 (second and fourth position)\n
+          * An empty space indicates that there is not a current digit in a secret number.\n
+          * If codebreaker inputs the exact number as a secret number - codebreaker wins the\n
+          game. If all attempts are spent - codebreaker loses.\n
+          * Codebreaker also has some number of hints(depends on chosen difficulty). If a user takes\n
+          a hint - he receives back a separate digit of the secret code."
+  commands:
+    start: 'start'
+    rules: 'rules'
+    stats: 'stats'
+    exit: 'exit'
+    hint: 'hint'
+  answers:
+    agree: 'y'
+    disagree: 'n'
+  enter_name: 'Please, enter your name(3-20 symbols):'
+  short_name: "Name is too short\n"
+  enter_difficulty: 'Choose difficulty: easy, medium, hell:'
+  no_difficulty: "No such difficulty\n"
+  enter_guess: 'Enter your guess, take "hint" or press "exit":'
+  no_hints: "\nYou have no any hints."
+  show_hint: "\nHint: "
+  lose: 'You lose. Secret code: '
+  win: 'YOU WIN!!! Secret code: '
+  again: 'Do you want to play again? y/n:'
+  save: 'Do you want to save your results? y/n:'
+  stats_prev_line: '========STATISTICS========'
+  no_stats: 'No statistics yet.'
+  rating: 'Rating: #'
+  difficulty: "\nDifficulty: "
+  attempts: 'Attempts: '
+  hints: 'Hints: '

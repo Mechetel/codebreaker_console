@@ -1,0 +1,30 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'codebreaker.gemspec'
+    - 'vendor/bundle/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/codebreaker/**/*'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/codebreaker/**/*'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/codebreaker/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
