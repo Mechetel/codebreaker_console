@@ -1,6 +1,6 @@
 GIT
   remote: https://mechetel:9dbd0beeeb7e738e7ad67ec24d8a46a058c17337@github.com/mechetel/codebreaker.git
-  revision: 9e92f436ba0aed703a4b599431a3d42b6b9401e2
+  revision: 5a3284f13609fe69d4c2fa5652f80b064c6ad99e
   branch: development
   specs:
     codebreaker (0.1.0)

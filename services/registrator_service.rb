@@ -6,7 +6,7 @@ class RegistratorService
       user = Codebreaker::User.new(input)
       return user if user.valid?
 
-      puts show_entities_error(user)
+      show_entities_error(user)
       create_user
     end
 
@@ -16,7 +16,7 @@ class RegistratorService
       difficulty = Codebreaker::Difficulty.new(input)
       return difficulty if difficulty.valid?
 
-      puts show_entities_error(difficulty)
+      show_entities_error(difficulty)
       create_difficulty
     end
 

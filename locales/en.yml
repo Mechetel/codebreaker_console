@@ -9,7 +9,7 @@ en:
   unexpected_command: 'You have passed unexpected command. Please choose one from listed commands.'
   rules: "==========CODEBREAKER RULES==========\n
           * Codebreaker is a logic game in which a code-breaker tries to break a secret code\n
-          created by a code-maker. The codemaker, which will be played by the application we’re\n
+          created by a code-maker. The codemaker, which will be played by the application we're\n
           going to write, creates a secret code of four numbers between 1 and 6.\n
           * The codebreaker gets some number of chances to break the code (depends on chosen\n
           difficulty). In each turn, the codebreaker makes a guess of 4 numbers. The codemaker\n
@@ -55,3 +55,10 @@ en:
   difficulty: "\nDifficulty: "
   attempts: 'Attempts: '
   hints: 'Hints: '
+  guess_is_not_integer: 'Guess should be Integer class'
+  digits_count_error: 'Invalid digits count'
+  digit_range_error: 'Digit is not in a range'
+  difficulty_error: 'No such difficulty'
+  name_is_not_string_error: 'Name should be an instance of String'
+  short_name_error: 'Name is too short'
+  long_name_error: 'Name is too long'

@@ -5,20 +5,22 @@ module Questioner
     case input
     when I18n.t('answers.agree')     then console.start_new_game
     when I18n.t('answers.disagree')  then console.leave
-    else puts I18n.t('unexpected_command')
+    else
+      puts I18n.t('unexpected_command')
+      ask_about_new_game(console)
     end
-    ask_about_new_game(console)
   end
 
-  def ask_about_save_results(game, statistics)
+  def ask_about_save_results(console, game, statistics)
     puts I18n.t('save')
     input = gets.chomp
     case input
-    when I18n.t('answers.agree')    then return statistics.store(game)
-    when I18n.t('answers.disagree') then return
-    else puts I18n.t('unexpected_command')
+    when I18n.t('answers.agree')    then statistics.store(game)
+    when I18n.t('answers.disagree') then ask_about_new_game(console)
+    else
+      puts I18n.t('unexpected_command')
+      ask_about_save_results(console, game, statistics)
     end
-    ask_about_save_results(game, statistics)
   end
 
   def ask_choose_game_option(console)
@@ -45,7 +47,9 @@ module Questioner
     when I18n.t('commands.rules') then console.rules
     when I18n.t('commands.stats') then console.stats
     when I18n.t('commands.exit') then console.leave
-    else puts I18n.t('unexpected_command')
+    else
+      puts I18n.t('unexpected_command')
+      console.choose_main_menu_option
     end
   end
 end

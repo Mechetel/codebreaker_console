@@ -14,4 +14,3 @@ module Beautifier
     end
   end
 end
-

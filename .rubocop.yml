@@ -10,21 +10,26 @@ AllCops:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/codebreaker/**/*'
+    - 'spec/**/*'
 
 Metrics/ModuleLength:
   Exclude:
-    - 'spec/codebreaker/**/*'
+    - 'spec/**/*'
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
-    - 'spec/codebreaker/**/*'
+    - 'spec/**/*'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+  AllowSubject: false
+  Max: 6
 
 Layout/LineLength:
   Max: 120
