@@ -58,7 +58,9 @@ class Console
 
   def check_guess(guess)
     won if @game.win?(guess)
-    error_message { Codebreaker::GuessChecker.validate(guess) }
+    error = error_message { Codebreaker::GuessChecker.validate(guess) }
+    return if error.nil?
+
     puts @game.check_attempt(guess)
   end
 
@@ -95,6 +97,7 @@ class Console
 
   def error_message
     yield
+    true
   rescue Codebreaker::ValidationError => e
     puts e.message
   end
