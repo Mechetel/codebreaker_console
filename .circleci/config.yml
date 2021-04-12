@@ -2,7 +2,7 @@ version: 2.1
 
 executors:
   default:
-    working_directory: ~/codebreaker_console
+    working_directory: ~/repo
     description: The official CircleCI Ruby Docker image
     docker:
       - image: circleci/ruby:2.7.2
@@ -67,4 +67,3 @@ workflows:
       - run_specs:
           requires:
             - lintering
-
