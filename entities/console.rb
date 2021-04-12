@@ -6,7 +6,6 @@ class Console
 
   def initialize
     @statistics = Codebreaker::StatisticsService.new(FILE_PATH)
-    @error_exist = false
   end
 
   def choose_main_menu_option
@@ -59,8 +58,8 @@ class Console
 
   def check_guess(guess)
     won if @game.win?(guess)
-    error_message(guess)
-    puts @game.check_attempt(guess) unless @error_exist
+    error_message { Codebreaker::GuessChecker.validate(guess) }
+    puts @game.check_attempt(guess)
   end
 
   def lost
@@ -94,13 +93,9 @@ class Console
     puts(I18n.t('hints') + @game.hints.to_s)
   end
 
-  def error_message(guess)
-    begin
-      Codebreaker::GuessChecker.validate(guess)
-    rescue Codebreaker::ValidationError => e
-      @error_exist = true
-      return puts e.message
-    end
-    @error_exist = false
+  def error_message
+    yield
+  rescue Codebreaker::ValidationError => e
+    puts e.message
   end
 end

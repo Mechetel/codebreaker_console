@@ -71,10 +71,9 @@ RSpec.describe Console do
 
       it 'puts statistics header' do
         allow(console).to receive(:ask_choose_game_option)
-        expect { console.stats }.to output("#{I18n.t('stats_prev_line')}\nRating: #1" \
-                      "\nPlayer: Mechetel\nDifficulty: hell\n" \
-                      "Attempts total: 5\nAttempts used: 1\n" \
-                      "Hints total: 1\nHints used: 0\n" \
+        expect { console.stats }.to output("#{I18n.t('stats_prev_line')}" \
+                      "\nRating: #1\nPlayer: Mechetel\nDifficulty: hell\n" \
+                      "Attempts total: 5\nAttempts used: 1\nHints total: 1\nHints used: 0\n" \
                       "=========================\n").to_stdout
       end
 
@@ -128,7 +127,7 @@ RSpec.describe Console do
       let(:unright_guess) { 'abra' }
 
       it 'puts error message' do
-        allow(console).to receive(:error_message).with(unright_guess)
+        allow(console).to receive(:error_message)
         console.check_guess(unright_guess)
       end
     end
