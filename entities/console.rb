@@ -49,15 +49,6 @@ class Console
     exit true
   end
 
-  def start_game_process
-    system 'clear'
-    until @game.lose?
-      show_current_state
-      ask_choose_command_in_game_process(self)
-    end
-    lost
-  end
-
   def hint
     if @game.no_hints?
       puts I18n.t('no_hints')
@@ -83,6 +74,15 @@ class Console
   end
 
   private
+
+  def start_game_process
+    system 'clear'
+    until @game.lose?
+      show_current_state
+      ask_choose_command_in_game_process(self)
+    end
+    lost
+  end
 
   def show_current_state
     puts(I18n.t('difficulty') + @game.difficulty.level.to_s)

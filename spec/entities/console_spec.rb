@@ -50,7 +50,7 @@ RSpec.describe Console do
         console.instance_variable_set(:@game, game)
         allow(console).to receive(:gets).and_return('1234')
         allow(console).to receive(:lost)
-        console.start_game_process
+        console.send(:start_game_process)
       end
     end
   end
