@@ -31,5 +31,8 @@ RSpec/MultipleMemoizedHelpers:
   AllowSubject: false
   Max: 6
 
+RSpec/MessageSpies:
+  Enabled: false
+
 Layout/LineLength:
   Max: 120

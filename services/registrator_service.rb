@@ -2,8 +2,7 @@ class RegistratorService
   class << self
     def create_user
       puts I18n.t('enter_name')
-      input = gets.chomp
-      user = Codebreaker::User.new(input)
+      user = Codebreaker::User.new(gets.chomp)
       return user if user.valid?
 
       show_entities_error(user)
@@ -12,8 +11,7 @@ class RegistratorService
 
     def create_difficulty
       puts I18n.t('enter_difficulty')
-      input = gets.chomp
-      difficulty = Codebreaker::Difficulty.new(input)
+      difficulty = Codebreaker::Difficulty.new(gets.chomp)
       return difficulty if difficulty.valid?
 
       show_entities_error(difficulty)

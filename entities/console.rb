@@ -14,7 +14,6 @@ class Console
   end
 
   def start
-    system 'clear'
     @user = RegistratorService.create_user
     @difficulty = RegistratorService.create_difficulty
     @game = Codebreaker::Game.new(@user, @difficulty)
@@ -22,14 +21,12 @@ class Console
   end
 
   def start_new_game
-    system 'clear'
     @difficulty = RegistratorService.create_difficulty
     @game = Codebreaker::Game.new(@user, @difficulty)
     start_game_process
   end
 
   def stats
-    system 'clear'
     return puts I18n.t('no_stats') unless File.exist? FILE_PATH
 
     puts I18n.t('stats_prev_line')
@@ -38,7 +35,6 @@ class Console
   end
 
   def rules
-    system 'clear'
     puts I18n.t('rules')
     ask_choose_game_option(self)
   end
@@ -49,15 +45,14 @@ class Console
   end
 
   def hint
-    if @game.no_hints?
-      puts I18n.t('no_hints')
-    else
-      puts(I18n.t('show_hint') + @game.use_hint.to_s)
-    end
+    return puts I18n.t('no_hints') if @game.no_hints?
+
+    puts(I18n.t('show_hint') + @game.use_hint.to_s)
   end
 
   def check_guess(guess)
-    won if @game.win?(guess)
+    return won if @game.win?(guess)
+
     error = error_message { Codebreaker::GuessChecker.validate(guess) }
     return if error.nil?
 
@@ -77,8 +72,8 @@ class Console
   private
 
   def start_game_process
-    system 'clear'
     until @game.lose?
+      puts @game.secret_code
       show_current_state
       ask_choose_command_in_game_process(self)
     end

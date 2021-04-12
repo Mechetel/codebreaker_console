@@ -29,7 +29,7 @@ RSpec.describe Console do
       allow(console).to receive(:start_game_process)
       allow(RegistratorService).to receive(:create_user)
       allow(RegistratorService).to receive(:create_difficulty)
-      allow(Codebreaker::Game).to receive(:new)
+      expect(Codebreaker::Game).to receive(:new)
       console.start
     end
   end
@@ -38,7 +38,7 @@ RSpec.describe Console do
     it 'sets game instance variable' do
       allow(console).to receive(:start_game_process)
       allow(RegistratorService).to receive(:create_difficulty)
-      allow(Codebreaker::Game).to receive(:new)
+      expect(Codebreaker::Game).to receive(:new)
       console.start_new_game
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe Console do
         game.instance_variable_set(:@attempts, 1)
         console.instance_variable_set(:@game, game)
         allow(console).to receive(:gets).and_return('1234')
-        allow(console).to receive(:lost)
+        expect(console).to receive(:lost)
         console.send(:start_game_process)
       end
     end
@@ -79,7 +79,7 @@ RSpec.describe Console do
 
       it "puts user's statistics" do
         allow(console).to receive(:ask_choose_game_option)
-        allow(console).to receive(:show_stats_with_beauty).with(console.instance_variable_get(:@statistics))
+        expect(console).to receive(:show_stats_with_beauty).with(console.instance_variable_get(:@statistics))
         console.stats
       end
     end
@@ -118,7 +118,7 @@ RSpec.describe Console do
   describe '#check_guess' do
     context 'when guess equals to secret code' do
       it 'calls won method' do
-        allow(console).to receive(:won)
+        expect(console).to receive(:won)
         console.check_guess(game.secret_code.join)
       end
     end
@@ -127,7 +127,7 @@ RSpec.describe Console do
       let(:unright_guess) { 'abra' }
 
       it 'puts error message' do
-        allow(console).to receive(:error_message)
+        expect(console).to receive(:error_message)
         console.check_guess(unright_guess)
       end
     end
