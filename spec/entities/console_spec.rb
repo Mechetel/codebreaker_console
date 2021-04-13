@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe Console do
   let(:user) { Codebreaker::User.new('Mechetel') }
   let(:difficulty) { Codebreaker::Difficulty.new('hell') }

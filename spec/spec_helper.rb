@@ -1,6 +1,5 @@
 require 'simplecov'
 SimpleCov.start do
-  enable_coverage :branch
   add_filter 'spec/'
 end
 SimpleCov.minimum_coverage 95
