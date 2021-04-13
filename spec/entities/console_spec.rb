@@ -55,18 +55,18 @@ RSpec.describe Console do
 
   describe '#stats' do
     context 'when file exist' do
-      let(:file_path) { './db/test.yml' }
-
       before do
-        console.instance_variable_set(:@statistics, Codebreaker::StatisticsService.new(file_path))
-        file = File.open(file_path, 'w')
+        stub_const('Console::FILE_PATH', './db/test.yml')
+        console.instance_variable_set(:@statistics, Codebreaker::StatisticsService.new(Console::FILE_PATH))
+        Dir.mkdir('db') unless Dir.exist?('db')
+        file = File.open(Console::FILE_PATH, 'w')
         data = [{ player: 'Mechetel', difficulty: 'hell', attempts_total: 5,
                   attempts_used: 1, hints_total: 1, hints_used: 0 }]
         file.write(data.to_yaml)
         file.close
       end
 
-      after { File.delete(file_path) }
+      after { File.delete(Console::FILE_PATH) }
 
       it 'puts statistics header' do
         allow(console).to receive(:ask_choose_game_option)
