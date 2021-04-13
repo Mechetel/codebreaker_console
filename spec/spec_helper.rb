@@ -4,7 +4,7 @@ SimpleCov.start do
   add_filter 'spec/'
 end
 
-if ENV.fetch('COVERAGE') { false }
+if ENV.fetch('COVERAGE')
   SimpleCov.start do
     minimum_coverage 85
     maximum_coverage_drop 2
