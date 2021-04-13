@@ -1,0 +1,10 @@
+require 'bundler/setup'
+require 'i18n'
+require 'codebreaker'
+require 'pry'
+
+require_relative 'config'
+require_relative 'services/registrator_service'
+require_relative 'services/beautifier_service'
+require_relative 'modules/questioner'
+require_relative 'entities/console'
