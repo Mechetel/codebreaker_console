@@ -1,6 +1,6 @@
 GIT
   remote: https://mechetel:9dbd0beeeb7e738e7ad67ec24d8a46a058c17337@github.com/mechetel/codebreaker.git
-  revision: 5a3284f13609fe69d4c2fa5652f80b064c6ad99e
+  revision: a09328044cd1e1c65466b6e27466cfd24234e50c
   branch: development
   specs:
     codebreaker (0.1.0)
@@ -18,11 +18,11 @@ GEM
     fasterer (0.9.0)
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     parallel (1.20.1)
-    parser (3.0.0.0)
+    parser (3.0.1.0)
       ast (~> 2.4.1)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -32,7 +32,7 @@ GEM
       pry (~> 0.13.0)
     rainbow (3.0.0)
     regexp_parser (2.1.1)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -46,7 +46,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
-    rubocop (1.11.0)
+    rubocop (1.12.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -57,7 +57,7 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
-    rubocop-performance (1.10.1)
+    rubocop-performance (1.10.2)
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rspec (2.2.0)
