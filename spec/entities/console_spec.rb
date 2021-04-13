@@ -56,9 +56,8 @@ RSpec.describe Console do
   describe '#stats' do
     context 'when file exist' do
       before do
-        stub_const('Console::FILE_PATH', './db/test.yml')
+        stub_const('Console::FILE_PATH', './db/statistics.yml')
         console.instance_variable_set(:@statistics, Codebreaker::StatisticsService.new(Console::FILE_PATH))
-        Dir.mkdir('db') unless Dir.exist?('db')
         file = File.open(Console::FILE_PATH, 'w')
         data = [{ player: 'Mechetel', difficulty: 'hell', attempts_total: 5,
                   attempts_used: 1, hints_total: 1, hints_used: 0 }]
