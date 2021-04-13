@@ -3,7 +3,7 @@ SimpleCov.start do
   enable_coverage :branch
   add_filter 'spec/'
 end
-SimpleCov.minimum_coverage 85
+SimpleCov.minimum_coverage 95
 require './autoload'
 
 RSpec.configure do |config|

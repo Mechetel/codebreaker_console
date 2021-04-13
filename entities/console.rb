@@ -73,7 +73,6 @@ class Console
 
   def start_game_process
     until @game.lose?
-      puts @game.secret_code
       show_current_state
       ask_choose_command_in_game_process(self)
     end
