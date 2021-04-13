@@ -3,12 +3,14 @@ SimpleCov.start do
   enable_coverage :branch
   add_filter 'spec/'
 end
-if ENV.fetch('COVERAGE', false)
+
+if ENV.fetch('COVERAGE') { false }
   SimpleCov.start do
     minimum_coverage 85
     maximum_coverage_drop 2
   end
 end
+
 SimpleCov.minimum_coverage 95
 require './autoload'
 
