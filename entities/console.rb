@@ -2,7 +2,7 @@ class Console
   include Questioner
   include Beautifier
 
-  FILE_PATH = './db/statistics.yml'.freeze
+  FILE_PATH = File.expand_path('../db/statistics.yml', __dir__)
 
   def initialize
     @statistics = Codebreaker::StatisticsService.new(FILE_PATH)
