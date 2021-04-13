@@ -46,8 +46,7 @@ module Questioner
     when I18n.t('commands.start') then console.start
     when I18n.t('commands.rules') then console.rules
     when I18n.t('commands.stats')
-      console.stats
-      ask_choose_game_option(console)
+      console.stats && ask_choose_game_option(console)
     when I18n.t('commands.exit') then console.leave
     else
       puts I18n.t('unexpected_command')
